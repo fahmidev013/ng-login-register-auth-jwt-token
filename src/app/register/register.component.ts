@@ -1,12 +1,14 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AlertService, UserService, AuthenticationService } from '@app/_services';
 
-@Component({templateUrl: 'register.component.html'})
-export class RegisterComponent implements OnInit {
+declare var $: any;
+
+@Component({ templateUrl: 'register.component.html' })
+export class RegisterComponent implements OnInit, AfterViewInit {
     registerForm: FormGroup;
     loading = false;
     submitted = false;
@@ -17,19 +19,28 @@ export class RegisterComponent implements OnInit {
         private authenticationService: AuthenticationService,
         private userService: UserService,
         private alertService: AlertService
-    ) { 
+    ) {
         // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue) { 
+        if (this.authenticationService.currentUserValue) {
             this.router.navigate(['/']);
         }
     }
 
     ngOnInit() {
+        this.loadScript('../../assets/js/jquery.slimscroll.js');
+        this.loadScript('../../assets/js/dropdown-bootstrap-extended.js');
+        // this.loadScript('../../assets/js/init.js');
         this.registerForm = this.formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
             username: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]]
+        });
+    }
+
+    ngAfterViewInit() {
+        $(window).ready(function () {
+            $(".preloader-it").delay(500).fadeOut("slow");
         });
     }
 
@@ -56,5 +67,16 @@ export class RegisterComponent implements OnInit {
                     this.alertService.error(error);
                     this.loading = false;
                 });
+    }
+
+
+    loadScript(url: string) {
+        const body = <HTMLDivElement>document.body;
+        const script = document.createElement('script');
+        script.innerHTML = '';
+        script.src = url;
+        script.async = true;
+        script.defer = false;
+        body.appendChild(script);
     }
 }

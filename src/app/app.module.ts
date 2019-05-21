@@ -35,13 +35,13 @@ import { AlertService, AuthenticationService, UserService } from './_services';
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
-        AuthGuard,
+        /* AuthGuard,
         AlertService,
         AuthenticationService,
-        UserService
+        UserService */
 
         // provider used to create fake backend
-        //fakeBackendProvider
+        fakeBackendProvider
     ],
     bootstrap: [AppComponent]
 })

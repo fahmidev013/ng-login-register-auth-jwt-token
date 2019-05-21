@@ -1,15 +1,15 @@
-﻿import { Component, OnInit, AfterContentInit, ViewChild, ElementRef } from '@angular/core';
+﻿import { Component, OnInit, AfterContentInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AlertService, AuthenticationService } from '@app/_services';
 
-
 declare var $: any;
 
+
 @Component({ templateUrl: 'login.component.html', styleUrls: ['./login.component.css'] })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterViewInit {
     loginForm: FormGroup;
     loading = false;
     submitted = false;
@@ -30,9 +30,10 @@ export class LoginComponent implements OnInit {
 
 
     ngOnInit() {
+
         this.loadScript('../../assets/js/jquery.slimscroll.js');
         this.loadScript('../../assets/js/dropdown-bootstrap-extended.js');
-        this.loadScript('../../assets/js/init.js');
+        // this.loadScript('../../assets/js/init.js');
         this.loadScript('../../assets/js/login-data.js');
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
@@ -43,6 +44,11 @@ export class LoginComponent implements OnInit {
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
+    ngAfterViewInit() {
+        $(window).ready(function () {
+            $(".preloader-it").delay(500).fadeOut("slow");
+        });
+    }
 
 
 
