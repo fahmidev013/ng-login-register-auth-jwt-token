@@ -85,25 +85,30 @@
                                 <p class="mb-30">Create your account and start your free trial today</p>
                                 <div class="form-row">
                                     <div class="col-md-6 form-group">
-                                        <input class="form-control" placeholder="First name" value="" type="text">
+                                        <input formControlName="firstName" placeholder="FirstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" placeholder="First name"  type="text">
+                                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                                        </div>
                                     </div>
                                     <div class="col-md-6 form-group">
-                                        <input class="form-control" placeholder="Last name" value="" type="text">
+                                        <input type="text" formControlName="lastName" placeholder="LastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" formControlName="username" placeholder="Username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                        <div *ngIf="f.username.errors.required">Username is required</div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Email" type="email">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" type="password">
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="Confirm Password" type="password">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><span class="feather-icon"><i
-                                                        data-feather="eye-off"></i></span></span>
-                                        </div>
+                                    <input type="password" placeholder="Password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                        <div *ngIf="f.password.errors.required">Password is required</div>
+                                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
                                     </div>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-25">
@@ -111,7 +116,11 @@
                                     <label class="custom-control-label font-14" for="same-address">I have read and agree
                                         to the <a href=""><u>term and conditions</u></a></label>
                                 </div>
-                                <button class="btn btn-primary btn-block" type="submit">Register</button>
+                                <div class="form-group">
+                                    <button class="btn btn-primary btn-block" [disabled]="loading" >Register</button>    
+                                    <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                                </div>
+                                
                                 <div class="option-sep">or</div>
                                 <div class="form-row">
                                     <div class="col-sm-6 mb-20">
