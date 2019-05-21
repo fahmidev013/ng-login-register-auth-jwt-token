@@ -1,29 +1,43 @@
 ﻿<!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+<!-- <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
     <div class="navbar-nav">
         <a class="nav-item nav-link" routerLink="/">Home</a>
         <a class="nav-item nav-link" (click)="logout()">Logout</a>
     </div>
-</nav>
+</nav> -->
+
+<router-outlet></router-outlet>
+
+
+<!-- <div class="hk-wrapper">
+    <div class="hk-pg-wrapper hk-auth-wrapper">
+        <router-outlet></router-outlet>
+    </div>
+</div> -->
+<!-- /Main Content -->
+
+
+
 
 <!-- main app container -->
-<div class="jumbotron">
+<!-- <div class="jumbotron">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 offset-sm-3">
                 <alert></alert>
-                <router-outlet></router-outlet>
+
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- credits -->
-<div class="text-center">
+<!-- <div class="text-center">
     <p>
-        <a href="http://jasonwatmore.com/post/2018/10/29/angular-7-user-registration-and-login-example-tutorial" target="_top">Angular 7 - User Registration and Login Example & Tutorial</a>
+        <a href="http://jasonwatmore.com/post/2018/10/29/angular-7-user-registration-and-login-example-tutorial"
+            target="_top">Angular 7 - User Registration and Login Example & Tutorial</a>
     </p>
     <p>
         <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>
     </p>
-</div>
+</div> -->

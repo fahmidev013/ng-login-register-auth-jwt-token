@@ -1,11 +1,14 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, AfterContentInit, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AlertService, AuthenticationService } from '@app/_services';
 
-@Component({templateUrl: 'login.component.html'})
+
+declare var $: any;
+
+@Component({ templateUrl: 'login.component.html', styleUrls: ['./login.component.css'] })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
@@ -20,12 +23,17 @@ export class LoginComponent implements OnInit {
         private alertService: AlertService
     ) {
         // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue) { 
+        if (this.authenticationService.currentUserValue) {
             this.router.navigate(['/']);
         }
     }
 
+
     ngOnInit() {
+        this.loadScript('../../assets/js/jquery.slimscroll.js');
+        this.loadScript('../../assets/js/dropdown-bootstrap-extended.js');
+        this.loadScript('../../assets/js/init.js');
+        this.loadScript('../../assets/js/login-data.js');
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
             password: ['', Validators.required]
@@ -34,6 +42,9 @@ export class LoginComponent implements OnInit {
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
+
+
+
 
     // convenience getter for easy access to form fields
     get f() { return this.loginForm.controls; }
@@ -58,4 +69,16 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 });
     }
+
+
+    public loadScript(url: string) {
+        const body = <HTMLDivElement>document.body;
+        const script = document.createElement('script');
+        script.innerHTML = '';
+        script.src = url;
+        script.async = true;
+        script.defer = false;
+        body.appendChild(script);
+    }
+
 }

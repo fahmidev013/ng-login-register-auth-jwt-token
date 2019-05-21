@@ -1,22 +1,145 @@
-﻿<h2>Login</h2>
+﻿<!-- <h2>Login</h2>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <input type="text" formControlName="username" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
         <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
             <div *ngIf="f.username.errors.required">Username is required</div>
         </div>
     </div>
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <input type="password" formControlName="password" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
             <div *ngIf="f.password.errors.required">Password is required</div>
         </div>
     </div>
     <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary">Login</button>
-        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <img *ngIf="loading" class="pl-3"
+            src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
         <a routerLink="/register" class="btn btn-link">Register</a>
     </div>
-</form>
+</form> -->
+
+<!-- Preloader -->
+<div class="preloader-it">
+    <div class="loader-pendulums"></div>
+</div>
+<!-- /Preloader -->
+
+
+<div class="hk-wrapper">
+
+    <div class="hk-pg-wrapper hk-auth-wrapper">
+        <header class="d-flex justify-content-between align-items-center">
+            <a class="d-flex auth-brand" href="#">
+                <img class="brand-img" src="../../assets/img/logo-dark.png" alt="brand" />
+            </a>
+            <div class="btn-group btn-group-sm">
+                <a href="#" class="btn btn-outline-secondary">Help</a>
+                <a href="#" class="btn btn-outline-secondary">About Us</a>
+            </div>
+        </header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 pa-0">
+                    <div id="owl_demo_1" class="owl-carousel dots-on-item owl-theme">
+                        <div class="fadeOut item auth-cover-img overlay-wrap"
+                            style="background-image:url(../../assets/img/bg2.jpg);">
+                            <div class="auth-cover-info py-xl-0 pt-100 pb-50">
+                                <div class="auth-cover-content text-center w-xxl-75 w-sm-90 w-xs-100">
+                                    <h1 class="display-3 text-white mb-20">Understand and look deep into nature.</h1>
+                                    <p class="text-white">The purpose of lorem ipsum is to create a natural looking
+                                        block of
+                                        text (sentence, paragraph, page, etc.) that doesn't distract from the layout.
+                                        Again
+                                        during the 90s as desktop publishers bundled the text with their software.</p>
+                                </div>
+                            </div>
+                            <div class="bg-overlay bg-trans-dark-50"></div>
+                        </div>
+                        <div class="fadeOut item auth-cover-img overlay-wrap"
+                            style="background-image:url(../../assets/img/bg1.jpg);">
+                            <div class="auth-cover-info py-xl-0 pt-100 pb-50">
+                                <div class="auth-cover-content text-center w-xxl-75 w-sm-90 w-xs-100">
+                                    <h1 class="display-3 text-white mb-20">Experience matters for good applications.
+                                    </h1>
+                                    <p class="text-white">The passage experienced a surge in popularity during the 1960s
+                                        when Letraset used it on their dry-transfer sheets, and again during the 90s as
+                                        desktop publishers bundled the text with their software.</p>
+                                </div>
+                            </div>
+                            <div class="bg-overlay bg-trans-dark-50"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-7 pa-0">
+                    <div class="auth-form-wrap py-xl-0 py-50">
+                        <div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-xs-100">
+
+                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                                <h1 class="display-4 mb-10">Welcome Back :)</h1>
+                                <p class="mb-30">Sign in to your account and enjoy unlimited perks.</p>
+                                <div class="form-group">
+                                    <input class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+                                        formControlName="username" placeholder="Username" type="text">
+
+                                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                        <div *ngIf="f.username.errors.required">Username is required</div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input class="form-control" type="password"
+                                            [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                            formControlName="password" placeholder="Password">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><span class="feather-icon"><i
+                                                        data-feather="eye-off"></i></span></span>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                        <div *ngIf="f.password.errors.required">Password is required</div>
+                                    </div>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-25">
+                                    <input class="custom-control-input" id="same-address" type="checkbox" checked>
+                                    <label class="custom-control-label font-14" for="same-address">Keep me logged
+                                        in</label>
+                                </div>
+                                <button class="btn btn-primary btn-block" [disabled]="loading"
+                                    type="submit">Login</button>
+                                <p class="font-14 text-center mt-15">Having trouble logging in?</p>
+                                <div class="option-sep">or</div>
+                                <div class="form-row">
+                                    <div class="col-sm-6 mb-20">
+                                        <button class="btn btn-indigo btn-block btn-wth-icon"> <span
+                                                class="icon-label"><i class="fa fa-facebook"></i> </span><span
+                                                class="btn-text">Login with
+                                                facebook</span></button>
+                                    </div>
+                                    <div class="col-sm-6 mb-20">
+                                        <button class="btn btn-sky btn-block btn-wth-icon"> <span class="icon-label"><i
+                                                    class="fa fa-twitter"></i>
+                                            </span><span class="btn-text">Login with
+                                                Twitter</span></button>
+                                        <img *ngIf="loading" class="pl-3"
+                                            src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                                    </div>
+                                </div>
+                                <p class="text-center">Do have an account yet? <a routerLink="/register">Sign Up</a></p>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
