@@ -25,7 +25,33 @@
             "styles": [
               "src/assets/css/style.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/vendors/jquery/dist/jquery.min.js",
+              "src/assets/vendors/popper.js/dist/umd/popper.min.js",
+              "src/assets/vendors/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/vendors/owl.carousel/dist/owl.carousel.min.js",
+              "src/assets/vendors/popper.js/dist/umd/popper.min.js",
+              "src/assets/js/feather.min.js",
+              "src/assets/vendors/datatables.net/js/jquery.dataTables.min.js",
+              "src/assets/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js",
+              "src/assets/vendors/datatables.net-dt/js/dataTables.dataTables.min.js",
+              "src/assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js",
+              "src/assets/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js",
+              "src/assets/vendors/datatables.net-buttons/js/buttons.flash.min.js",
+              "src/assets/vendors/datatables.net-buttons/js/buttons.html5.min.js",
+              "src/assets/vendors/datatables.net-buttons/js/buttons.print.min.js",
+              "src/assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js",
+              "src/assets/vendors/jszip/dist/jszip.min.js",
+              "src/assets/vendors/pdfmake/build/pdfmake.min.js",
+              "src/assets/vendors/pdfmake/build/vfs_fonts.js",
+              "src/assets/vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js",
+              "src/assets/vendors/ion-rangeslider/js/ion.rangeSlider.min.js",
+              "src/assets/vendors/select2/dist/js/select2.full.min.js",
+              "src/assets/vendors/moment/min/moment.min.js",
+              "src/assets/vendors/daterangepicker/daterangepicker.js",
+              "node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js",
+              "src/assets/vendors/jquery-toggles/toggles.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

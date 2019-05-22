@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
         this.loadScript('../../assets/js/jquery.slimscroll.js');
         this.loadScript('../../assets/js/dropdown-bootstrap-extended.js');
-        // this.loadScript('../../assets/js/init.js');
         this.loadScript('../../assets/js/login-data.js');
+        this.loadScript('../../assets/js/init.js');
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
             password: ['', Validators.required]

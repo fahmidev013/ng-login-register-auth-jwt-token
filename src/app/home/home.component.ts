@@ -29,10 +29,14 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     ngOnInit() {
+        // this.loadScript('../../assets/vendors/jquery/dist/jquery.min.js');
+        // this.loadScript('../../assets/vendors/popper.js/dist/umd/popper.min.js');
+        // this.loadScript('../../assets/vendors/bootstrap/dist/js/bootstrap.min.js');
         this.loadScript('../../assets/js/jquery.slimscroll.js');
         this.loadScript('../../assets/js/dropdown-bootstrap-extended.js');
         this.loadScript('../../assets/js/dataTables-data.js');
         this.loadScript('../../assets/js/toggle-data.js');
+        this.loadScript('../../assets/js/init.js');
         this.loadAllUsers();
     }
 

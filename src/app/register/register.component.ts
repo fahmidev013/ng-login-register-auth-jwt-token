@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         this.loadScript('../../assets/js/jquery.slimscroll.js');
         this.loadScript('../../assets/js/dropdown-bootstrap-extended.js');
+        this.loadScript('../../assets/js/init.js');
         // this.loadScript('../../assets/js/init.js');
         this.registerForm = this.formBuilder.group({
             firstName: ['', Validators.required],

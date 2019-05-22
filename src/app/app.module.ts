@@ -15,7 +15,10 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AuthGuard } from './_guards';
-import { AlertService, AuthenticationService, UserService } from './_services';
+import { AlertService, AuthenticationService, UserService } from './_services';;
+import { FormsComponent } from './forms/forms.component';
+import { ProfileComponent } from './profile/profile.component';
+import { InvoiceComponent } from './invoice/invoice.component'
 
 @NgModule({
     imports: [
@@ -29,7 +32,10 @@ import { AlertService, AuthenticationService, UserService } from './_services';
         AlertComponent,
         HomeComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        FormsComponent,
+        ProfileComponent,
+        InvoiceComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

@@ -27,9 +27,7 @@ $(document).ready(function () {
 
 /*****Load function start*****/
 
-// $(window).ready(function () {
-//   $(".preloader-it").delay(500).fadeOut("slow");
-// });
+
 
 
 /*****Load function* end*****/
@@ -78,6 +76,7 @@ var mintos = function () {
     $(this).parent().siblings().find('.collapse').collapse('hide');
     $(this).parent().find('.collapse').collapse('hide');
   });
+
 
   /*Card Remove*/
   $(document).on('click', '.card-close', function (e) {
